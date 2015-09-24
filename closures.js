@@ -46,12 +46,20 @@ console.log(function1("435-215-9248"));
   Write a function called makeCounter that makes the following code work properly.
 */
 
-  //Code Here
-  var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+  var makeCounter = function() {
+    var counter = 0;
+    return function(){
+      return ++counter;
+    }
+  }
+
+var count = makeCounter();
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+
 
 
 
@@ -64,7 +72,13 @@ console.log(function1("435-215-9248"));
   (which invokes the original function that was passed in) that can only ever be executed once.
 */
 
-  //Code Here
+var myFunc = function(x) {
+  function myFunc2(){
+    x();
+  }
+  return myFunc2;
+}
+  
 
 
 
@@ -73,9 +87,14 @@ console.log(function1("435-215-9248"));
 
 
 /*
-  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
+  Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. 
+  The first parameter will be an anonymous function and the second parameter, 'N', will be a number. 
+  Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number 
+  of times, return 'STOP'.
 */
+var fnCounter = function(function(, N) {
 
+}
 
 
 //Next Problem
